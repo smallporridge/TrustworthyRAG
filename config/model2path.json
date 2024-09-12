@@ -1,0 +1,11 @@
+{
+    "llama2-13b-chat": "meta-llama/Llama-2-13b-chat-hf",
+    "llama2-13b": "meta-llama/Llama-2-13b-hf",
+    "qwen2-7b-instruct": "Qwen/Qwen-7B-Instruct",
+    "glm-4-9b-chat": "THUDM/GLM-130B",
+    "baichuan2-13b-chat": "baichuan-inc/Baichuan2-13B-Chat",
+    "baichuan2-7b-chat": "baichuan-inc/Baichuan2-7B-Chat",
+    "llama2-7b-chat": "meta-llama/Llama-2-7b-chat-hf",
+    "llama2-7b": "meta-llama/Llama-2-7b-hf",
+    "nli": "google/t5_xxl_true_nli_mixture"
+}

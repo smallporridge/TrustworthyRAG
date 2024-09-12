@@ -1,24 +1,27 @@
-# TrustworthyRAG
+# Trustworthiness in Retrieval-Augmented Generation Systems: A Survey
 
-## Overview
-- **Fairness:** It aims to prevent any form of bias or discrimination towards any person or group within society.
-- **Explainability:** It ensures the decision-making process is transparent, allowing individuals to comprehend the rationale behind decisions.
-- **Accountability:** It involves overseeing the creation and implementation of AI algorithms to confirm they don't result in any adverse effects.
-- **Privacy:** It prioritizes the protection of personal and sensitive data.
+This repository contains the code for the paper:
+[Trustworthiness in Retrieval-Augmented Generation Systems: A Survey](url)
 
-## Related Works
+## Quick start
 
-### Factuality
+### Install environment
 
-### Robustness
+Install all required libraries by running
+```bash
+pip install -r requirements.txt
+```
 
-### Safety
+### Setup Model Path and Openai key (Optional)
 
-### Fairness
+You need to fill in the local path of the LLM you are using in `/config/model2path.json`, otherwise it will be downloaded from Huggingface by default. 
 
-### Explainability
+If you need to use Openai APIs such as GPT-4o, you need to configure the `api_key` and other settings in the `/config/openai_setting.json`.
 
-### Accountability
+### Run Evaluation
 
-### Privacy
-+ [Follow My Instruction and Spill the Beans: Scalable Data Extraction from Retrieval-Augmented Generation Systems.](https://arxiv.org/abs/2402.17840)
+Just use following code to run evaluation on dimensions. You can modify the `model_list` inside to determine the model you want to evaluate.
+
+```bash
+bash run_eval.sh
+```
