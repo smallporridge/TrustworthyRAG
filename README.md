@@ -3,7 +3,7 @@
 This repository contains the code for the paper:
 [Trustworthiness in Retrieval-Augmented Generation Systems: A Survey](url)
 
-![framework](framework.png)
+![framework](framework.jpg)
 We identify six essential dimensions of trustworthiness in a RAG system: 
 
 + **Factuality** - refers to the accuracy and truthfulness of the information generated.
