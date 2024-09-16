@@ -40,3 +40,21 @@ Just use following code to run evaluation on dimensions. You can modify the `mod
 ```bash
 bash run_eval.sh
 ```
+
+The evalution results on 10 different LLMs across six dimensions are as follows:
+
+![ability](ability.jpg)
+
+### Citation
+
+If you find this repo useful, please consider citing our work:
+
+```
+@inproceedings{zhou2024TrustworthyRAG,
+author    = {Yujia Zhou and Yan Liu and Xiaoxi Li and Jiajie Jin and Hongjin Qian and Zheng Liu and Chaozhuo Li and Zhicheng Dou and Tsung-Yi Ho and and Philip S. Yu},
+  title     = {Trustworthiness in Retrieval-Augmented Generation Systems: A Survey},
+  journal   = {CoRR},
+  volume    = {abs/},
+  year      = {2024}
+}
+```
