@@ -54,7 +54,7 @@ If you find this repo useful, please consider citing our work:
 author    = {Yujia Zhou and Yan Liu and Xiaoxi Li and Jiajie Jin and Hongjin Qian and Zheng Liu and Chaozhuo Li and Zhicheng Dou and Tsung-Yi Ho and and Philip S. Yu},
   title     = {Trustworthiness in Retrieval-Augmented Generation Systems: A Survey},
   journal   = {CoRR},
-  volume    = {abs/},
+  volume    = {abs/2409.10102},
   year      = {2024}
 }
 ```
