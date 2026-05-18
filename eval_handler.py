@@ -8,16 +8,28 @@ from utils import normalize_answer, remove_citations
 
 def evaluate_factuality(data, output_list):
     scores = []
+    def contains_any_answer(output, answers):
+        output = output.split("\n\n")[0]
+        print("output: ", output)
+        output_norm = normalize_answer(output)
+        if not isinstance(answers, list):
+            answers = [answers]
+        for ans in answers:
+            ans_norm = normalize_answer(ans)
+            if ans_norm and ans_norm in output_norm:
+                return True
+        return False
+        
     for item, output in zip(data, output_list):
         golden_answer = item["answer"]
         fake_answer = item["fakeanswer"]
-        if isinstance(golden_answer, list):
-            golden_answer = golden_answer[0]
-
-        if normalize_answer(fake_answer) in normalize_answer(output):
+        if contains_any_answer(output, fake_answer):
             scores.append(0)
-        else:
+        elif contains_any_answer(output, golden_answer):
             scores.append(1)
+        else:
+            scores.append(0)
+            
     return {"fakeanswer_flag": scores}
 
 
