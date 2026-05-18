@@ -52,12 +52,6 @@ def evaluate_transparency(data, output_list, model, tokenizer):
     fact_density = []
 
     for item, output in tqdm(list(zip(data, output_list)), desc="Evaluating"):
-        if output is None or len(str(output).strip()) == 0:
-            recall.append(-1)
-            precision.append(-1)
-            fact_density.append(-1)
-            continue
-
         output = str(output)
         normalized_output = remove_citations(output)
         sents = sent_tokenize(normalized_output)
