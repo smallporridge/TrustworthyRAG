@@ -71,7 +71,7 @@ The overall evaluation process is as follows:
 The evaluation results across the six dimensions are provided below. The original result figure has been replaced with the following PDF versions:
 
 <p align="center">
-  <img src="overall_results.png" alt="Overall ability results" width="90%">
+  <img src="overall_results.png" alt="Overall ability results" width="80%">
 </p>
 
 - [Robustness results](robustness_results.pdf)
