@@ -68,7 +68,7 @@ The overall evaluation process is as follows:
 3. If a model has environment conflicts, deploy it with vLLM first and call the corresponding class in `llm_generator.py`.
 4. Run the evaluation scripts for the six trustworthiness dimensions.
 
-The evaluation results across the six dimensions are provided below. The original result figure has been replaced with the following PDF versions:
+The evaluation results across the six dimensions are provided below. Detailed results for robustness, transparency, and accountability are provided as links below and can be viewed by clicking on them.
 
 <p align="center">
   <img src="overall_results.png" alt="Overall ability results" width="80%">
