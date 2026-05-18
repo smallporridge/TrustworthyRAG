@@ -17,7 +17,7 @@ We identify six essential dimensions of trustworthiness in a RAG system:
 
 ## A  Review of the  Literature
 We analyze various approaches, methodologies, and techniques that have been proposed or implemented to enhance trustworthiness across the six key dimensions.
-![Trust-RAG Compass](Trustworthy_RAG.pdf)
+![Trust-RAG Compass](trustworthy_rag.png)
 
 ## Quick start
 
@@ -71,9 +71,9 @@ The overall evaluation process is as follows:
 The evaluation results across the six dimensions are provided below. The original result figure has been replaced with the following PDF versions:
 
 - ![Overall ability results](overall_results.png)
-- ![Robustness results](robustness_results.pdf)
-- ![Accountability results](accountability_results.pdf)
-- ![Transparency results](transparency_results.pdf)
+- [Robustness results](robustness_results.pdf)
+- [Accountability results](accountability_results.pdf)
+- [Transparency results](transparency_results.pdf)
 
 ### Citation
 
