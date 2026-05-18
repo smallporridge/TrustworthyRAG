@@ -19,7 +19,11 @@ We identify six essential dimensions of trustworthiness in a RAG system:
 We analyze various approaches, methodologies, and techniques that have been proposed or implemented to enhance trustworthiness across the six key dimensions.
 ![Trust-RAG Compass](trustworthy_rag.png)
 
-## Quick start
+
+## An Evaluation Benchmark, TRC Bench (Trust-RAG Compass Benchmark)
+To provide a practical evaluation of trustworthiness in RAG systems, we introduce TRC Bench (Trust-RAG Compass Benchmark), a comprehensive benchmark covering six dimensions of trustworthiness. 
+
+### Quick start
 
 ### Install environment
 
