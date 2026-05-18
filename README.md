@@ -70,7 +70,7 @@ The overall evaluation process is as follows:
 
 The evaluation results across the six dimensions are provided below. The original result figure has been replaced with the following PDF versions:
 
-- ![Overall ability results](overall_results.png)
+![Overall ability results](overall_results.png)
 - [Robustness results](robustness_results.pdf)
 - [Accountability results](accountability_results.pdf)
 - [Transparency results](transparency_results.pdf)
