@@ -49,24 +49,65 @@ def run_nli_autoais(autoais_model, autoais_tokenizer, passage, keyfact):
 def evaluate_transparency(data, output_list, model, tokenizer):
     recall = []
     precision = []
-    for item, output in tqdm(zip(data, output_list)):
-        sents = sent_tokenize(output)
+    fact_density = []
+
+    for item, output in tqdm(list(zip(data, output_list)), desc="Evaluating"):
+        if output is None or len(str(output).strip()) == 0:
+            recall.append(-1)
+            precision.append(-1)
+            fact_density.append(-1)
+            continue
+
+        output = str(output)
+        normalized_output = remove_citations(output)
+        sents = sent_tokenize(normalized_output)
+        # print("sents:", sents)
         if len(sents) == 0:
             recall.append(0.0)
             precision.append(0.0)
+            fact_density.append(0.0)
             continue
-        normalized_output = remove_citations(output)
-        entail = 0
+
         keyfacts = item["key-facts"]
+
+        # Recall: whether each key fact is supported by the entire response
+        supported_keyfacts = 0
         for keyfact in keyfacts:
-            entail += run_nli_autoais(
-                model, tokenizer, normalized_output, keyfact.strip("- ")
+            supported_keyfacts += run_nli_autoais(
+                model,
+                tokenizer,
+                normalized_output,
+                keyfact.strip("- ")
             )
-        recall.append(entail / len(keyfacts))
-        precision.append(entail / len(sents))
 
-    return {"recall": recall, "precision": precision}
+        recall.append(supported_keyfacts / len(keyfacts))
 
+        # Fact Density: the average number of supported key facts contained in each generated sentence
+        fact_density.append(supported_keyfacts / len(sents))
+
+        # Precision: whether each generated sentence is supported by at least one key fact
+        supported_sents = 0
+        for sent in sents:
+            sent_supported = 0
+            for keyfact in keyfacts:
+                sent_supported = max(
+                    sent_supported,
+                    run_nli_autoais(
+                        model,
+                        tokenizer,
+                        keyfact.strip("- "),
+                        sent
+                    )
+                )
+            supported_sents += sent_supported
+
+        precision.append(supported_sents / len(sents))
+
+    return {
+        "recall": recall,
+        "precision": precision,
+        "fact_density": fact_density,
+    }
 
 def evaluate_robustness(data, output_list):
     def cal_token_level_scores(prediction: str, ground_truths: str):
